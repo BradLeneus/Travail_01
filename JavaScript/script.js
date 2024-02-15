@@ -64,7 +64,13 @@ function addTask() {
     listItem.appendChild(doneBtn);
 
     doneBtn.addEventListener("click", () => {
-        listItem.id = "taskDone"});
+        if(listItem.id == ""){
+            listItem.id = "taskDone" 
+        }
+        else(
+            listItem.id = ""
+        )});
+    
 
     const editBtn = document.createElement("img");
 
