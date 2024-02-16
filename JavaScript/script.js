@@ -1,8 +1,8 @@
-function save(){
+function save() {
     let nom = document.getElementById("lastname").value;
     let prenom = document.getElementById("firstname").value;
 
-    
+
     alert(nom + ", " + prenom)
     localStorage.setItem("nom", nom);
     localStorage.setItem("prénom", prenom);
@@ -13,11 +13,11 @@ function save(){
 
 
 
-const taskInput = document.getElementById("taskInput") ;
+const taskInput = document.getElementById("taskInput");
 
-const addTaskBtn = document.getElementById("addTask") ;
+const addTaskBtn = document.getElementById("addTask");
 
-const taskList = document.getElementById("taskList") ;
+const taskList = document.getElementById("taskList");
 
 const clearAll = document.getElementById("clearAll")
 
@@ -36,8 +36,8 @@ addTaskBtn.addEventListener("click", addTask);
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
 }
- 
- function w3_close() {
+
+function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }
 
@@ -45,70 +45,72 @@ function addTask() {
 
     const taskText = taskInput.value.trim();
 
-    if (taskText !==""){
+    if (taskText !== "") {
 
-    const listItem = document.createElement("li");
+        const listItem = document.createElement("li");
 
-    listItem.textContent = taskText;
+        listItem.textContent = taskText;
 
-    taskList.appendChild(listItem);
+        taskList.appendChild(listItem);
 
-    taskInput.value = "";
+        taskInput.value = "";
 
-    const doneBtn = document.createElement("img");
+        const doneBtn = document.createElement("img");
 
-    doneBtn.setAttribute("src", "./Images/icons8-checkmark-50.png");
-    doneBtn.setAttribute('height', '18px');
-    doneBtn.setAttribute('width', '18px');
+        doneBtn.setAttribute("src", "./Images/icons8-checkmark-50.png");
+        doneBtn.setAttribute('height', '18px');
+        doneBtn.setAttribute('width', '18px');
 
-    listItem.appendChild(doneBtn);
+        listItem.appendChild(doneBtn);
 
-    doneBtn.addEventListener("click", () => {
-        if(listItem.id == ""){
-            listItem.id = "taskDone" 
-        }
-        else(
-            listItem.id = ""
-        )});
-    
-
-    const editBtn = document.createElement("img");
-
-    editBtn.setAttribute("src", "./Images/icons8-edit-file-50.png");
-    editBtn.setAttribute('height', '18px');
-    editBtn.setAttribute('width', '18px');
-
-    listItem.appendChild(editBtn);
-
-    editBtn.addEventListener("click", () => {
-        taskInput.value = listItem.textContent
-        listItem.remove()
-    });
-
-    const deleteBtn = document.createElement("img");
-
-    deleteBtn.setAttribute("src", "./Images/icons8-delete-60.png");
-    deleteBtn.setAttribute('height', '18px');
-    deleteBtn.setAttribute('width', '18px');
-
-    // La méthode JavaScript appendChild() est utilisée pour insérer un nouveau noeud ou repositionner un
-
-    //noeud existant en tant que dernier enfant d'un noeud parent particulier.
-
-    listItem.appendChild(deleteBtn);
-
-    deleteBtn.addEventListener("click", () => {
-
-    listItem.remove();
-
-    });
+        doneBtn.addEventListener("click", () => {
+            if (listItem.id == "") {
+                listItem.id = "taskDone"
+            }
+            else (
+                listItem.id = ""
+            )
+        });
 
 
-    }else{
+        const editBtn = document.createElement("img");
+
+        editBtn.setAttribute("src", "./Images/icons8-edit-file-50.png");
+        editBtn.setAttribute('height', '18px');
+        editBtn.setAttribute('width', '18px');
+
+        listItem.appendChild(editBtn);
+
+        editBtn.addEventListener("click", () => {
+            taskInput.value = listItem.textContent
+            listItem.remove()
+        });
+
+        const deleteBtn = document.createElement("img");
+
+        deleteBtn.setAttribute("src", "./Images/icons8-delete-60.png");
+        deleteBtn.setAttribute('height', '18px');
+        deleteBtn.setAttribute('width', '18px');
+
+        // La méthode JavaScript appendChild() est utilisée pour insérer un nouveau noeud ou repositionner un
+
+        //noeud existant en tant que dernier enfant d'un noeud parent particulier.
+
+        listItem.appendChild(deleteBtn);
+
+        deleteBtn.addEventListener("click", () => {
+
+            listItem.remove();
+
+        });
+
+
+    } else {
         alert("Veuillez entrer une tâche valide.");
     }
-localStorage.setItem(task.concat(i), (taskText), i++)
-clearAll.addEventListener("click", () => {
-    localStorage.clear()
-})
+    localStorage.setItem(task.concat(i), (taskText), i++)
+    clearAll.addEventListener("click", () => {
+        localStorage.clear()
+    })
 }
+

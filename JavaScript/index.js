@@ -1,4 +1,4 @@
-////////////////// Obtenez le modal d'inscription ///////////////////////
+////////////////// Obtenez le modal d'inscription ///////////////////////    /stocker le informations du login
 function userInfo (){
 
   // Todo
