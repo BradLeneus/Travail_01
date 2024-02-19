@@ -1,6 +1,31 @@
-#addTask{
+#addTask {
     background-color: white;
     color: black;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .background-video {
+        width: 120%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .background-video {
+        width: auto;
+        height: 100%;
+    }
 }
 
 .sidebar {
@@ -18,29 +43,58 @@
     left: 0;
 }
 
-.w3-sidebar{height:100%;width:200px;background-color:rgb(241, 227, 227);position:fixed!important;z-index:1;overflow:none}
-.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;text-align:left;border:none;white-space:normal;float:none;outline:0}
-.w3-bar-block.w3-center .w3-bar-item{text-align:center}.w3-block{display:block;width:100%}
+.w3-sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: rgb(241, 227, 227);
+    position: fixed !important;
+    z-index: 1;
+    overflow: none
+}
 
-#div1{
-    background-color: #a1a73d;
+.w3-bar-block .w3-bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0
+}
+
+.w3-bar-block.w3-center .w3-bar-item {
+    color: white;
+    text-align: center
+}
+
+.w3-block {
+    display: block;
+    width: 100%
+}
+
+#div1 {
+    background-color: black;
     margin-bottom: 5px;
     margin-top: 5px;
 }
-#div2{
-    background-color: #afb634;
+
+#div2 {
+    background-color: black;
     margin-bottom: 5px;
 }
-#div3{
-    background-color: rgb(195, 202, 65);
+
+#div3 {
+    background-color: black;
     margin-bottom: 5px;
 }
 
 body {
     background-color: magenta;
     font-family: Arial, sans-serif;
-   }
-   .container {
+}
+
+.container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -48,25 +102,31 @@ body {
     border-radius: 5px;
     background-color: rgb(153, 51, 136);
     color: black;
-   }
-   input{
+}
+
+input {
     background: rgb(253, 253, 253);
     color: black;
-   }
-   ::placeholder{
+}
+
+::placeholder {
     color: rgb(39, 39, 34);
     opacity: 0.7;
-   }
-   button{
+}
+
+button {
     background-color: black;
     color: white;
-   }
-.centrerhaut{
+}
+
+.centrerhaut {
     text-align: center;
 }
-#taskDone{
+
+#taskDone {
     text-decoration: line-through;
     opacity: 0.7;
 }
-
-
+#div1,#div2,#div3,a{
+    color: white;
+}
