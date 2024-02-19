@@ -1,6 +1,6 @@
 #addTask{
-    background-color: rebeccapurple;
-    color: gold;
+    background-color: white;
+    color: black;
 }
 
 .sidebar {
@@ -37,29 +37,29 @@
 }
 
 body {
-    background-color: rgb(150, 148, 148);
+    background-color: magenta;
     font-family: Arial, sans-serif;
    }
    .container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    border: 1px solid gold;
+    border: 1px solid white;
     border-radius: 5px;
     background-color: rgb(153, 51, 136);
-    color: gold;
+    color: black;
    }
    input{
     background: rgb(253, 253, 253);
-    color: gold;
+    color: black;
    }
    ::placeholder{
     color: rgb(39, 39, 34);
     opacity: 0.7;
    }
    button{
-    background-color: #a1a73d;
-    color: #000080;
+    background-color: black;
+    color: white;
    }
 .centrerhaut{
     text-align: center;
