@@ -1,9 +1,31 @@
 ////////////////// Obtenez le modal d'inscription ///////////////////////    /stocker le informations du login
-function connexionUtilisateur (){
-
-  // Todo
-  document.location='accueil.html';
+function login (event){ //https://pastebin.com/HVTg3gEt//
+  event.preventDefault();
+  const nomUtilisateur = document.getElementById("unameLogin").value;
+  const pwsd = document.getElementById("pswdLogin").value;
+ 
+  const connexionUtilisateur = localStorage.getItem("uname");
+  const pwsdLogin = localStorage.getItem("pswd");
+ 
+  if(nomUtilisateur === connexionUtilisateur && pwsd === pwsdLogin){
+      window.location.replace("../accueil.html")
+  }
+  else{
+    alert("Unfortunately for you, your mother was bedded by me and my son.")
+  }
 }
+ 
+function register(){
+  const nomUtilisateur = document.getElementById("nomUtilisateur").value;
+  const mdp = document.getElementById("mdp").value;
+  const confirmationMdp = document.getElementById("confirmationMdp").value;
+ 
+  if(mdp === confirmationMdp){
+    localStorage.setItem("uname", nomUtilisateur)
+    localStorage.setItem("pswd", mdp)
+  }
+  }
+
 
 
 
