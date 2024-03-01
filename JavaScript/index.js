@@ -1,5 +1,5 @@
-////////////////// Obtenez le modal d'inscription ///////////////////////    /stocker le informations du login
-function login (event){ //https://pastebin.com/HVTg3gEt//
+////////////////// Obtenez le modal d'inscription ///////////////////////    
+function login (event){  // fonction pour se connecter
   event.preventDefault();
   const nomUtilisateur = document.getElementById("unameLogin").value;
   const pwsd = document.getElementById("pswdLogin").value;
@@ -15,7 +15,7 @@ function login (event){ //https://pastebin.com/HVTg3gEt//
   }
 }
  
-function register(){
+function register(){ // fonction pour s'inscrire
   const nomUtilisateur = document.getElementById("nomUtilisateur").value;
   const mdp = document.getElementById("mdp").value;
   const confirmationMdp = document.getElementById("confirmationMdp").value;
