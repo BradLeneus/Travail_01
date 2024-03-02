@@ -46,7 +46,7 @@
 .w3-sidebar {
     height: 100%;
     width: 200px;
-    background-color: rgb(241, 227, 227);
+    background-color: black;
     position: fixed !important;
     z-index: 1;
     overflow: none
