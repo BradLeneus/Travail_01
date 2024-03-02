@@ -12,7 +12,7 @@ function save() {
 
 
 
-
+const addGroupBtn = document.getElementById("addGroupBtn");
 const taskInput = document.getElementById("taskInput");
 
 const addTaskBtn = document.getElementById("addTask");
@@ -45,72 +45,87 @@ function addTask() {
 
     const taskText = taskInput.value.trim();
 
-    if (taskText !== "") {
+    if (taskText !==""){
 
-        const listItem = document.createElement("li");
+    const listItem = document.createElement("li");
 
-        listItem.textContent = taskText;
+    listItem.textContent = taskText;
 
-        taskList.appendChild(listItem);
+    taskList.appendChild(listItem);
 
-        taskInput.value = "";
+    taskInput.value = "";
 
-        const doneBtn = document.createElement("img");
+    const doneBtn = document.createElement("img");
 
-        doneBtn.setAttribute("src", "./Images/icons8-checkmark-50.png");
-        doneBtn.setAttribute('height', '18px');
-        doneBtn.setAttribute('width', '18px');
+    doneBtn.setAttribute("src", "./Images/icons8-checkmark-50.png");
+    doneBtn.setAttribute('height', '18px');
+    doneBtn.setAttribute('width', '18px');
 
-        listItem.appendChild(doneBtn);
+    listItem.appendChild(doneBtn);
 
-        doneBtn.addEventListener("click", () => {
-            if (listItem.id == "") {
-                listItem.id = "taskDone"
-            }
-            else (
-                listItem.id = ""
-            )
-        });
+    doneBtn.addEventListener("click", () => {
+        listItem.id = "taskDone"});
 
+    const editBtn = document.createElement("img");
 
-        const editBtn = document.createElement("img");
+    editBtn.setAttribute("src", "./Images/icons8-edit-file-50.png");
+    editBtn.setAttribute('height', '18px');
+    editBtn.setAttribute('width', '18px');
 
-        editBtn.setAttribute("src", "./Images/icons8-edit-file-50.png");
-        editBtn.setAttribute('height', '18px');
-        editBtn.setAttribute('width', '18px');
+    listItem.appendChild(editBtn);
 
-        listItem.appendChild(editBtn);
+    editBtn.addEventListener("click", () => {
+        taskInput.value = listItem.textContent
+        listItem.remove()
+    });
 
-        editBtn.addEventListener("click", () => {
-            taskInput.value = listItem.textContent
-            listItem.remove()
-        });
+    const deleteBtn = document.createElement("img");
 
-        const deleteBtn = document.createElement("img");
+    deleteBtn.setAttribute("src", "./Images/icons8-delete-60.png");
+    deleteBtn.setAttribute('height', '18px');
+    deleteBtn.setAttribute('width', '18px');
 
-        deleteBtn.setAttribute("src", "./Images/icons8-delete-60.png");
-        deleteBtn.setAttribute('height', '18px');
-        deleteBtn.setAttribute('width', '18px');
+    // La méthode JavaScript appendChild() est utilisée pour insérer un nouveau noeud ou repositionner un
 
-        // La méthode JavaScript appendChild() est utilisée pour insérer un nouveau noeud ou repositionner un
+    //noeud existant en tant que dernier enfant d'un noeud parent particulier.
 
-        //noeud existant en tant que dernier enfant d'un noeud parent particulier.
+    listItem.appendChild(deleteBtn);
 
-        listItem.appendChild(deleteBtn);
+    deleteBtn.addEventListener("click", () => {
 
-        deleteBtn.addEventListener("click", () => {
+    listItem.remove();
 
-            listItem.remove();
-
-        });
+    });
 
 
-    } else {
+    }else{
         alert("Veuillez entrer une tâche valide.");
     }
-    localStorage.setItem(task.concat(i), (taskText), i++)
-    clearAll.addEventListener("click", () => {
-        localStorage.clear()
-    })
+localStorage.setItem(task.concat(i), (taskText), i++)
+clearAll.addEventListener("click", () => {
+    localStorage.clear()
+})
 }
 
+function sortTasks() {
+    // Get the taskList element
+    let taskList = document.getElementById('taskList');
+
+    // Convert the taskList children to an array
+    let tasks = Array.from(taskList.children);
+
+    // Sort the array based on the text content of the list items
+    tasks.sort((a, b) => a.textContent.trim().localeCompare(b.textContent.trim()));
+
+    // Remove all tasks from the taskList
+    while (taskList.firstChild) {
+        taskList.firstChild.remove();
+    }
+
+    // Append the sorted tasks back to the taskList
+    for (let task of tasks) {
+        taskList.appendChild(task);
+    }
+}
+
+//faire une fonction qui permet à l'utilisateur d'ajouter une tâche à a un groupe de tâches
