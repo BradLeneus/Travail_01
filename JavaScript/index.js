@@ -11,11 +11,11 @@ function login (event){  // fonction pour se connecter
       window.location.replace("../accueil.html")
   }
   else{
-    alert("Unfortunately for you, your mother was bedded by me and my son.")
+    alert("Désolé,Vous n'avez pas entré vos bonnes informations.")
   }
 }
  
-function register(){ // fonction pour s'inscrire
+function inscrireUtilisateur(){ // fonction pour s'inscrire
   const nomUtilisateur = document.getElementById("nomUtilisateur").value;
   const mdp = document.getElementById("mdp").value;
   const confirmationMdp = document.getElementById("confirmationMdp").value;
