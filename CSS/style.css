@@ -13,7 +13,10 @@
 
 
 }
-
+li {
+font-size: 25px;
+font-family: Arial, Helvetica, sans-serif;
+}
 @media (min-aspect-ratio: 16/9) {
     .background-video {
         width: 120%;
@@ -93,15 +96,15 @@ body {
     background-color: magenta;
     font-family: Arial, sans-serif;
 }
-
-.container {
+.container { 
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
     border: 1px solid white;
     border-radius: 5px;
-    background-color: rgb(153, 51, 136);
-    color: black;
+    background-color: blueviolet;
+    color: white;
+    font-family: 'Brush Script MT', cursive;
 }
 
 input {
