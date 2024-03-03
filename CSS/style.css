@@ -13,10 +13,12 @@
 
 
 }
+
 li {
-font-size: 25px;
-font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
 }
+
 @media (min-aspect-ratio: 16/9) {
     .background-video {
         width: 120%;
@@ -96,7 +98,8 @@ body {
     background-color: magenta;
     font-family: Arial, sans-serif;
 }
-.container { 
+
+.container {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
@@ -130,6 +133,10 @@ button {
     text-decoration: line-through;
     opacity: 0.7;
 }
-#div1,#div2,#div3,a{
+
+#div1,
+#div2,
+#div3,
+a {
     color: white;
 }

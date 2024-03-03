@@ -119,7 +119,7 @@ function addTask() {
     })
 }
 
-function trierTâches() { //fonction qui permet de trier les tâches par ordre alphabétique
+function trierTâches() { // function that sorts the tasks alphabetically in the taskList
     // Get the taskList element
     let taskList = document.getElementById('taskList');
 
