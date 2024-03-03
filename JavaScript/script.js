@@ -107,7 +107,7 @@ clearAll.addEventListener("click", () => {
 })
 }
 
-function sortTasks() {
+function trierTâches() {
     // Get the taskList element
     let taskList = document.getElementById('taskList');
 
