@@ -89,7 +89,6 @@ function addTask() {
         deleteBtn.setAttribute('height', '18px');
         deleteBtn.setAttribute('width', '18px');
 
-        // La méthode JavaScript appendChild() est utilisée pour insérer un nouveau noeud ou repositionner un
         let selectedGroup = document.getElementById(groupSelect.value);
         let task = document.createElement('li');
         task.textContent = taskText;
