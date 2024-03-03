@@ -51,6 +51,9 @@ function addTask() {
 
         listItem.textContent = taskText;
 
+
+
+
         taskList.appendChild(listItem);
 
         taskInput.value = "";
@@ -89,13 +92,12 @@ function addTask() {
         // La méthode JavaScript appendChild() est utilisée pour insérer un nouveau noeud ou repositionner un
         let selectedGroup = document.getElementById(groupSelect.value);
         let task = document.createElement('li');
-    task.textContent = taskText;
+        task.textContent = taskText;
 
-    // Add the task to the task list and the selected group
-    taskList.appendChild(task);
-    selectedGroup.appendChild(task.cloneNode(true));
+        // Add the task to the task list and the selected group
+        selectedGroup.appendChild(task.cloneNode(true));
 
-    // Clear the task input
+        // Clear the task input
         taskInput.value = "";
         //noeud existant en tant que dernier enfant d'un noeud parent particulier.
 
@@ -107,7 +109,7 @@ function addTask() {
 
         });
 
-        
+
     } else {
         alert("Veuillez entrer une tâche valide.");
     }
@@ -136,7 +138,7 @@ function trierTâches() { //fonction qui permet de trier les tâches par ordre a
     for (let task of tasks) {
         taskList.appendChild(task);
     }
-    
-    
+
+
 
 }
