@@ -16,7 +16,7 @@ const addGroupBtn = document.getElementById("addGroupBtn");
 const taskInput = document.getElementById("taskInput");
 
 const addTaskBtn = document.getElementById("addTask");
-
+const groupSelect = document.getElementById("groupSelect");
 const taskList = document.getElementById("taskList");
 
 const clearAll = document.getElementById("clearAll")
@@ -45,69 +45,79 @@ function addTask() {
 
     const taskText = taskInput.value.trim();
 
-    if (taskText !==""){
+    if (taskText !== "") {
 
-    const listItem = document.createElement("li");
+        const listItem = document.createElement("li");
 
-    listItem.textContent = taskText;
+        listItem.textContent = taskText;
 
-    taskList.appendChild(listItem);
+        taskList.appendChild(listItem);
 
-    taskInput.value = "";
+        taskInput.value = "";
 
-    const doneBtn = document.createElement("img");
+        const doneBtn = document.createElement("img");
 
-    doneBtn.setAttribute("src", "./Images/icons8-checkmark-50.png");
-    doneBtn.setAttribute('height', '18px');
-    doneBtn.setAttribute('width', '18px');
+        doneBtn.setAttribute("src", "./Images/icons8-checkmark-50.png");
+        doneBtn.setAttribute('height', '18px');
+        doneBtn.setAttribute('width', '18px');
 
-    listItem.appendChild(doneBtn);
+        listItem.appendChild(doneBtn);
 
-    doneBtn.addEventListener("click", () => {
-        listItem.id = "taskDone"});
+        doneBtn.addEventListener("click", () => {
+            listItem.id = "taskDone"
+        });
 
-    const editBtn = document.createElement("img");
+        const editBtn = document.createElement("img");
 
-    editBtn.setAttribute("src", "./Images/icons8-edit-file-50.png");
-    editBtn.setAttribute('height', '18px');
-    editBtn.setAttribute('width', '18px');
+        editBtn.setAttribute("src", "./Images/icons8-edit-file-50.png");
+        editBtn.setAttribute('height', '18px');
+        editBtn.setAttribute('width', '18px');
 
-    listItem.appendChild(editBtn);
+        listItem.appendChild(editBtn);
 
-    editBtn.addEventListener("click", () => {
-        taskInput.value = listItem.textContent
-        listItem.remove()
-    });
+        editBtn.addEventListener("click", () => {
+            taskInput.value = listItem.textContent
+            listItem.remove()
+        });
 
-    const deleteBtn = document.createElement("img");
+        const deleteBtn = document.createElement("img");
 
-    deleteBtn.setAttribute("src", "./Images/icons8-delete-60.png");
-    deleteBtn.setAttribute('height', '18px');
-    deleteBtn.setAttribute('width', '18px');
+        deleteBtn.setAttribute("src", "./Images/icons8-delete-60.png");
+        deleteBtn.setAttribute('height', '18px');
+        deleteBtn.setAttribute('width', '18px');
 
-    // La méthode JavaScript appendChild() est utilisée pour insérer un nouveau noeud ou repositionner un
+        // La méthode JavaScript appendChild() est utilisée pour insérer un nouveau noeud ou repositionner un
+        let selectedGroup = document.getElementById(groupSelect.value);
+        let task = document.createElement('li');
+    task.textContent = taskText;
 
-    //noeud existant en tant que dernier enfant d'un noeud parent particulier.
+    // Add the task to the task list and the selected group
+    taskList.appendChild(task);
+    selectedGroup.appendChild(task.cloneNode(true));
 
-    listItem.appendChild(deleteBtn);
+    // Clear the task input
+        taskInput.value = "";
+        //noeud existant en tant que dernier enfant d'un noeud parent particulier.
 
-    deleteBtn.addEventListener("click", () => {
+        listItem.appendChild(deleteBtn);
 
-    listItem.remove();
+        deleteBtn.addEventListener("click", () => {
 
-    });
+            listItem.remove();
 
+        });
 
-    }else{
+        
+    } else {
         alert("Veuillez entrer une tâche valide.");
     }
-localStorage.setItem(task.concat(i), (taskText), i++)
-clearAll.addEventListener("click", () => {
-    localStorage.clear()
-})
+    localStorage.setItem(task.concat(i), (taskText), i++)
+    clearAll.addEventListener("click", () => {
+        localStorage.clear()
+    })
 }
 
-function trierTâches() {
+function trierTâches() { //fonction qui permet de trier les tâches par ordre alphabétique
     // Get the taskList element
     let taskList = document.getElementById('taskList');
 
@@ -126,6 +136,7 @@ function trierTâches() {
     for (let task of tasks) {
         taskList.appendChild(task);
     }
-}
+    
+    
 
-//faire une fonction qui permet à l'utilisateur d'ajouter une tâche à a un groupe de tâches
+}
